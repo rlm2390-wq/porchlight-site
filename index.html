@@ -3,165 +3,240 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Porchlight Reviews · Every review answered, for local businesses in RI &amp; MA</title>
-<meta name="description" content="Porchlight Reviews answers your Google and Yelp reviews in your voice, cleans up your online profile, and sends a simple monthly report. Serving Rhode Island and southeastern Massachusetts.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d2a3a'/%3E%3Ccircle cx='32' cy='30' r='12' fill='%23f2b544'/%3E%3Crect x='26' y='44' width='12' height='6' rx='2' fill='%23f2b544'/%3E%3C/svg%3E">
+<title>Porchlight Reviews: we answer your Google and Yelp reviews</title>
+<meta name="description" content="We reply to your Google and Yelp reviews in your voice, every week, and send you a one-page report each month. Local to Rhode Island and southeastern Massachusetts.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23263445'/%3E%3Ccircle cx='32' cy='28' r='11' fill='%23ffcc4d'/%3E%3Crect x='27' y='41' width='10' height='6' rx='1.5' fill='%23ffcc4d'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#fbf7ef;--paper:#ffffff;--ink:#1d2a3a;--soft:#5b6573;--line:#e7e0d2;--amber:#f2b544;--amber-deep:#c98a14;--glow:rgba(242,181,68,.28)}
+:root{
+  --ink:#1f2933;--soft:#56616c;--line:#e3e7eb;--paper:#ffffff;--wash:#f6f8f9;
+  --dusk:#263445;--bulb:#ffcc4d;--glow:#fff4cf;--ok:#2f7d55;
+  --cond:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.6 "Work Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .4em}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--cond);font-stretch:100%}
 a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-header{padding:20px 0}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{display:flex;align-items:center;gap:10px;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:21px;text-decoration:none}
-.logo svg{width:34px;height:34px}
-.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;transition:transform .15s}
-.btn,.logo{white-space:nowrap}
-.btn:hover{transform:translateY(-1px)}
-.btn.amber{background:var(--amber);color:var(--ink)}
-.btn.small{padding:9px 16px;font-size:15px}
-.hero{padding:48px 0 72px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;width:620px;height:620px;right:-180px;top:-200px;background:radial-gradient(circle,var(--glow),transparent 65%);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;position:relative}
-.eyebrow{font-weight:600;color:var(--amber-deep);letter-spacing:.06em;text-transform:uppercase;font-size:13px;margin-bottom:12px}
-.hero h1{font-size:clamp(36px,5.4vw,58px)}
-.hero p.lead{font-size:20px;color:var(--soft);max-width:34ch;margin:0 0 26px}
-.hero .note{font-size:14px;color:var(--soft);margin-top:12px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(29,42,58,.07)}
-.review .stars{color:var(--amber-deep);letter-spacing:2px}
-.review .who{font-weight:600;font-size:15px}
-.review p{margin:6px 0 0;font-size:15px}
-.reply{margin-top:14px;border-left:3px solid var(--amber);padding:6px 0 6px 14px;background:linear-gradient(90deg,rgba(242,181,68,.10),transparent)}
-.reply .tag{font-size:12px;font-weight:600;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.05em}
-.empty{margin-top:14px;font-size:14px;color:#a0412b;font-weight:500}
-section{padding:64px 0}
-section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-h2{font-size:clamp(28px,3.6vw,40px)}
-.sub{color:var(--soft);max-width:60ch;margin:0 0 30px}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.three h3{font-size:21px}
-.three p{margin:0;color:var(--soft);font-size:16px}
-.num{width:38px;height:38px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--soft);margin-bottom:10px}
-.price{max-width:560px;margin:0 auto;text-align:center}
-.price .amt{font-family:Fraunces,Georgia,serif;font-size:56px;font-weight:700;line-height:1}
-.price .amt small{font-size:20px;color:var(--soft);font-family:"Work Sans",sans-serif;font-weight:500}
-.price ul{list-style:none;padding:0;margin:22px 0;text-align:left;display:inline-block}
-.price li{padding:6px 0 6px 30px;position:relative}
-.price li::before{content:"";position:absolute;left:4px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px var(--glow)}
-.faq{max-width:720px}
-details{border-bottom:1px solid var(--line);padding:16px 0}
-summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--cond);font-stretch:68%;font-weight:800;line-height:1.02;margin:0 0 .35em;letter-spacing:-.005em}
+h1{font-size:clamp(44px,7.4vw,84px)}
+h2{font-size:clamp(34px,4.6vw,52px)}
+h3{font-size:26px;font-stretch:80%}
+p{max-width:62ch}
+.btn{display:inline-block;white-space:nowrap;font:700 17px/1 var(--cond);font-stretch:95%;text-decoration:none;padding:15px 22px;border-radius:6px;background:var(--dusk);color:#fff;border:2px solid var(--dusk)}
+.btn:hover{background:#1a2532}
+.btn.light{background:transparent;color:var(--dusk)}
+.btn.light:hover{background:var(--wash)}
+.btn.bulb{background:var(--bulb);border-color:var(--bulb);color:var(--dusk)}
+.btn.bulb:hover{background:#ffd76b}
+:focus-visible{outline:3px solid var(--bulb);outline-offset:3px}
+
+/* header */
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:16px;padding-bottom:16px;gap:16px}
+.mark{white-space:nowrap;display:flex;align-items:center;gap:10px;text-decoration:none;font:800 24px/1 var(--cond);font-stretch:70%}
+.mark svg{width:30px;height:30px;flex:none}
+header nav{display:flex;gap:22px;align-items:center;font-size:16px}
+header nav a{text-decoration:none;color:var(--soft)}
+header nav a:hover{color:var(--ink)}
+@media(max-width:700px){header nav .hide-sm{display:none}.mark{font-size:21px}}
+
+/* hero */
+.hero{padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero p.lead{font-size:21px;color:var(--soft);margin:8px 0 28px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero small{display:block;margin-top:14px;color:var(--soft);font-size:15px}
+@media(max-width:880px){.hero .wrap{grid-template-columns:1fr;gap:40px}.hero{padding-top:36px}}
+
+/* review mockups */
+.reviews{display:grid;gap:16px}
+.review{border:1px solid var(--line);border-radius:10px;padding:18px 20px;background:#fff}
+.who{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;flex:none}
+.who b{display:block;font-size:16px}
+.who span{font-size:14px;color:var(--soft)}
+.stars{color:#e3a008;letter-spacing:2px;font-size:15px}
+.review p{margin:6px 0 0;font-size:16px}
+.noreply{margin-top:12px;font-size:14px;color:#9a3b2c}
+.reply{margin-top:14px;padding:12px 14px;border-radius:8px;background:var(--glow);box-shadow:inset 4px 0 0 var(--bulb)}
+.reply b{display:block;font-size:14px;margin-bottom:2px}
+.reply p{margin:0;font-size:16px}
+.tag{font-size:13px;color:var(--soft);margin:0 0 -6px 4px}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section.tint{background:var(--wash)}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+@media(max-width:880px){.split{grid-template-columns:1fr;gap:20px}}
+.plain-list{list-style:none;margin:0;padding:0}
+.plain-list li{padding:16px 0;border-bottom:1px solid var(--line)}
+.plain-list li:first-child{padding-top:0}
+.plain-list b{display:block;font-size:20px;font-stretch:90%}
+.plain-list span{color:var(--soft)}
+
+ol.steps{list-style:none;counter-reset:s;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+ol.steps li{counter-increment:s;position:relative;padding-top:56px}
+ol.steps li::before{content:counter(s);position:absolute;top:0;left:0;font:800 44px/1 var(--cond);font-stretch:62%;color:var(--dusk);width:44px;height:44px;border-radius:50%;background:var(--bulb);display:flex;align-items:center;justify-content:center}
+ol.steps b{display:block;font-size:21px;font-stretch:85%;margin-bottom:4px}
+ol.steps span{color:var(--soft)}
+@media(max-width:820px){ol.steps{grid-template-columns:1fr}}
+
+/* plans */
+.plans{margin-top:28px;border-top:2px solid var(--dusk)}
+.plan{display:grid;grid-template-columns:1.3fr .8fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.plan h3{margin:0 0 6px}
+.plan p{margin:0;color:var(--soft);font-size:16px}
+.price{font:800 34px/1.05 var(--cond);font-stretch:70%}
+.price small{display:block;font:400 15px/1.4 var(--cond);font-stretch:100%;color:var(--soft);margin-top:4px}
+.plan.feature{background:linear-gradient(90deg,var(--glow),transparent 70%)}
+.plan.feature .ribbon{display:inline-block;font-size:14px;font-weight:700;background:var(--bulb);color:var(--dusk);padding:3px 9px;border-radius:4px;margin-bottom:8px}
+@media(max-width:820px){.plan{grid-template-columns:1fr;gap:10px}.plan .btn{justify-self:start}}
+.fine{font-size:15px;color:var(--soft);margin-top:18px}
+
+/* next */
+.next{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:20px}
+.next div{border-left:3px solid var(--bulb);padding-left:16px}
+.next b{display:block;font-size:19px;font-stretch:88%}
+.next span{color:var(--soft);font-size:16px}
+@media(max-width:820px){.next{grid-template-columns:1fr}}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--amber-deep);font-size:22px;line-height:1}
-details[open] summary::after{content:"–"}
+summary::after{content:"+";font-weight:400;font-size:24px;line-height:1;color:var(--soft)}
+details[open] summary::after{content:"−"}
 details p{color:var(--soft);margin:10px 0 0}
-.cta{background:var(--ink);color:#fff;text-align:center;border-radius:24px;padding:56px 24px;position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;width:500px;height:500px;left:50%;top:-320px;transform:translateX(-50%);background:radial-gradient(circle,rgba(242,181,68,.35),transparent 65%)}
-.cta *{position:relative}
-.cta p{color:#c9d1dc;max-width:46ch;margin:0 auto 26px}
-footer{padding:36px 0 48px;color:var(--soft);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
-@media (max-width:820px){.hero-grid,.compare,.three{grid-template-columns:1fr}.hero{padding-top:24px}.hero::before{right:-320px}}
-@media (max-width:420px){.logo{font-size:18px}.logo svg{width:28px;height:28px}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+/* closing */
+.closing{background:var(--dusk);color:#fff;border-top:0}
+.closing p{color:#c9d3dd}
+.closing .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.closing .btn.light{color:#fff;border-color:#fff}
+.closing .btn.light:hover{background:rgba(255,255,255,.08)}
+footer{background:var(--dusk);color:#c9d3dd;font-size:15px;padding:0 0 40px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.15);padding-top:22px}
+footer a{color:#fff}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <header><div class="wrap">
-  <a class="logo" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1d2a3a"/><circle cx="32" cy="30" r="12" fill="#f2b544"/><circle cx="32" cy="30" r="20" fill="none" stroke="#f2b544" stroke-opacity=".35" stroke-width="3"/><rect x="26" y="44" width="12" height="6" rx="2" fill="#f2b544"/></svg>Porchlight Reviews</a>
-  <a class="btn small" href="#contact">Free sample</a>
+  <a class="mark" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#263445"/><circle cx="32" cy="28" r="11" fill="#ffcc4d"/><rect x="27" y="41" width="10" height="6" rx="1.5" fill="#ffcc4d"/></svg>Porchlight Reviews</a>
+  <nav><a class="hide-sm" href="#how">How it works</a><a class="hide-sm" href="#plans">Prices</a><a class="btn light" style="padding:10px 14px;font-size:15px" href="#start">Get started</a></nav>
 </div></header>
 
 <main>
-<div class="hero"><div class="wrap hero-grid">
+<div class="hero"><div class="wrap">
   <div>
-    <div class="eyebrow">For local restaurants, shops &amp; trades in RI and MA</div>
-    <h1>Every review answered. Your customers notice.</h1>
-    <p class="lead">We reply to your Google and Yelp reviews in your voice, tidy up your online profile, and keep it that way, so you can get back to running the place.</p>
-    <a class="btn amber" href="#contact">Get 5 free review replies</a>
-    <p class="note">No contract. No setup fee. No passwords. Just send us your business name.</p>
+    <h1>Your reviews are talking. Somebody should answer.</h1>
+    <p class="lead">We’re a small local service that replies to your Google and Yelp reviews for you, in your voice, every week, so you can get back to running the place.</p>
+    <div class="actions">
+      <a class="btn bulb" href="mailto:porchlightreviewsri@gmail.com?subject=Free%20sample%20for%20my%20business&body=Business%20name%3A%0D%0ATown%3A%0D%0ABest%20way%20to%20reach%20you%3A%0D%0AHow%20did%20you%20hear%20about%20us%3F%0D%0A">Get 5 free replies</a>
+      <a class="btn light" href="#plans">See prices</a>
+    </div>
+    <small>Local to Rhode Island and southeastern Massachusetts. No contract, no passwords.</small>
   </div>
-  <div class="card review" aria-label="Example review with a reply">
-    <div class="label" style="margin-bottom:6px">Example</div>
-    <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
-    <div class="who">Dana R.</div>
-    <p>Great food, but we waited almost 40 minutes on a Friday. Would come back on a quieter night.</p>
-    <div class="reply"><div class="tag">Reply from the owner</div><p>Thanks for your patience, Dana, and for the kind words about the food. Fridays get busy and 40 minutes is longer than we want anyone waiting. We’ve added a cook on weekend nights. Hope to see you again soon!</p></div>
+  <div class="reviews" aria-label="Example: the same kind of review with and without an owner reply">
+    <p class="tag">Example of what customers see today</p>
+    <div class="review">
+      <div class="who"><div class="avatar" style="background:#7a5c9e">M</div><div><b>Mike T.</b><span>2 months ago</span></div></div>
+      <div class="stars" aria-label="2 stars">★★☆☆☆</div>
+      <p>Ordered through the app and they said my order didn’t exist. Waited an hour.</p>
+      <div class="noreply">No response from the owner</div>
+    </div>
+    <p class="tag">And with a reply</p>
+    <div class="review">
+      <div class="who"><div class="avatar" style="background:#2f7d55">D</div><div><b>Dana R.</b><span>1 week ago</span></div></div>
+      <div class="stars" aria-label="4 stars">★★★★☆</div>
+      <p>Great food, but we waited almost 40 minutes on a Friday. Would come back on a quieter night.</p>
+      <div class="reply"><b>Response from the owner</b><p>Thanks for your patience, Dana, and for the kind words about the food. Fridays get busy, but 40 minutes is longer than we want anyone waiting. We appreciate the honest feedback and hope to see you on a quieter night soon.</p></div>
+    </div>
   </div>
 </div></div>
 
-<section class="alt"><div class="wrap">
-  <h2>Silence reads like “we don’t care.”</h2>
-  <p class="sub">Most customers read reviews before they visit, and they read your replies too. An unanswered complaint sits there for years. A calm, friendly reply shows everyone that someone is minding the store.</p>
-  <div class="compare">
-    <div><div class="label">Without a reply (example)</div>
-      <div class="card review"><div class="stars" aria-label="2 out of 5 stars">★★☆☆☆</div><div class="who">Mike T.</div><p>Ordered through the app and they said my order didn’t exist. Waited an hour.</p><div class="empty">No response from the business.</div></div></div>
-    <div><div class="label">With Porchlight (example)</div>
-      <div class="card review"><div class="stars" aria-label="2 out of 5 stars">★★☆☆☆</div><div class="who">Mike T.</div><p>Ordered through the app and they said my order didn’t exist. Waited an hour.</p><div class="reply"><div class="tag">Reply from the owner</div><p>Mike, we’re sorry. That shouldn’t happen. App orders now print straight to the kitchen. Please call us so we can make this right.</p></div></div></div>
+<section><div class="wrap split">
+  <div>
+    <h2>Why bother replying?</h2>
+    <p>People read reviews before they come in, and they read your replies too. A complaint with no answer sits there for years and looks like nobody’s minding the store. A short, calm reply fixes that.</p>
+    <p>Most owners know this. They just don’t have the time. That’s the part we take off your plate.</p>
   </div>
-</div></section>
-
-<section><div class="wrap">
-  <h2>How it works</h2>
-  <p class="sub">Three steps. You stay in control the whole time.</p>
-  <div class="three">
-    <div class="card"><div class="num">1</div><h3>Free sample</h3><p>We write replies to your last five reviews, free. If you like how they sound, we keep going. If not, no hard feelings.</p></div>
-    <div class="card"><div class="num">2</div><h3>One-time cleanup</h3><p>We answer the backlog and refresh your Google and Yelp profiles: description, services, hours, and common questions.</p></div>
-    <div class="card"><div class="num">3</div><h3>Every week after</h3><p>New reviews get a reply within days, plus a monthly recap showing what customers love, what’s trending, and which staff get mentioned.</p></div>
-  </div>
-</div></section>
-
-<section class="alt" id="pricing"><div class="wrap price">
-  <div class="eyebrow">Founding client offer</div>
-  <h2>Simple pricing</h2>
-  <div class="amt">$99<small> / month</small></div>
-  <p class="sub" style="margin:10px auto 0"><strong>No setup fee</strong>, and your price is locked in for as long as you stay. Month to month, cancel anytime. Only for our first 10 clients.</p>
-  <ul>
-    <li>Replies to every new Google and Yelp review</li>
-    <li>One-time cleanup of your Google and Yelp profiles, free</li>
-    <li>Monthly management recap: what customers praise, what keeps coming up, and staff shout-outs</li>
-    <li>A real local person you can call or text</li>
+  <ul class="plain-list">
+    <li><b>Every new review gets a reply</b><span>Good ones get a real thank-you. Tough ones get a calm answer and an invitation to make it right.</span></li>
+    <li><b>Your Google and Yelp pages get cleaned up</b><span>Hours, description, services, and the questions customers keep asking.</span></li>
+    <li><b>A one-page report each month</b><span>What customers praised, what keeps coming up, which staff got shout-outs, and three things worth fixing.</span></li>
+    <li><b>Help getting more reviews</b><span>Printed QR cards for your counter that ask every customer how you did.</span></li>
   </ul>
-  <p class="note" style="color:var(--soft);font-size:14px;margin:0 0 20px">Regular price after the founding spots fill: $150/month plus a $250 setup.</p>
-  <div><a class="btn" href="#contact">Start with the free sample</a></div>
-  <div class="card" style="margin-top:36px;text-align:left">
-    <div class="eyebrow" style="margin-bottom:6px">Add-on</div>
-    <h3 style="font-size:24px">A simple website that works</h3>
-    <p style="color:var(--soft);margin:0 0 12px">No website, or one that hasn’t been touched in years? We’ll build a clean one-page site with your menu or services, hours, real customer reviews, and one-tap call and directions. It looks great on phones, and the domain stays in your name.</p>
-    <p style="margin:0"><strong>$199 one-time</strong> for founding clients · optional <strong>$20/month</strong> for updates like new hours, menu changes, and holiday notices.</p>
+</div></section>
+
+<section class="tint" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>We send you a free sample</b><span>Replies to your five most recent reviews. If you like how they sound, we keep going. If not, no hard feelings.</span></li>
+    <li><b>A 15-minute setup</b><span>You add us as a manager on Google and Yelp. No passwords, and you can remove us anytime. We clean up your profiles that first week.</span></li>
+    <li><b>Then it runs itself</b><span>We check every week and reply to anything new. You get a report at the start of each month. Anything sensitive comes to you first.</span></li>
+  </ol>
+</div></section>
+
+<section id="plans"><div class="wrap">
+  <h2>Prices</h2>
+  <p>Month to month. Cancel anytime with an email.</p>
+  <div class="plans">
+    <div class="plan feature">
+      <div><span class="ribbon">Founding client price</span><h3>Review care</h3><p>Weekly replies on Google and Yelp, a profile cleanup, Google posts, and the monthly report. Only for our first 10 clients, and your price stays locked.</p></div>
+      <div class="price">$99/month<small>No setup fee (normally $250)</small></div>
+      <a class="btn" href="mailto:porchlightreviewsri@gmail.com?subject=Sign%20me%20up%3A%20Review%20care&body=I%E2%80%99d%20like%20to%20start%20Review%20care%20(%2499%2Fmonth).%0D%0A%0D%0ABusiness%20name%3A%0D%0ATown%3A%0D%0AYour%20name%3A%0D%0ABest%20way%20to%20reach%20you%3A%0D%0ABest%20time%20to%20reach%20you%3A%0D%0AHow%20did%20you%20hear%20about%20us%3F%0D%0A">Get started</a>
+    </div>
+    <div class="plan">
+      <div><h3>Launch Package</h3><p>Just opened? We set up your Google and Yelp profiles, build a simple website, make review QR cards for your counter, and answer your first reviews.</p></div>
+      <div class="price">$249 once<small>then $49/month until you have about 30 reviews</small></div>
+      <a class="btn" href="mailto:porchlightreviewsri@gmail.com?subject=Sign%20me%20up%3A%20Launch%20Package&body=I%E2%80%99d%20like%20the%20Launch%20Package%20(%24249%2C%20then%20%2449%2Fmonth).%0D%0A%0D%0ABusiness%20name%3A%0D%0ATown%3A%0D%0AWhen%20did%20you%20open%3F%0D%0AYour%20name%3A%0D%0ABest%20way%20to%20reach%20you%3A%0D%0AHow%20did%20you%20hear%20about%20us%3F%0D%0A">Get started</a>
+    </div>
+    <div class="plan">
+      <div><h3>A simple website</h3><p>One page that looks good on phones: what you offer, hours, real customer reviews, and buttons to call or get directions. The web address stays in your name.</p></div>
+      <div class="price">$199 once<small>optional updates for $20/month</small></div>
+      <a class="btn" href="mailto:porchlightreviewsri@gmail.com?subject=Sign%20me%20up%3A%20Website&body=I%E2%80%99d%20like%20a%20simple%20website%20(%24199).%0D%0A%0D%0ABusiness%20name%3A%0D%0ATown%3A%0D%0ADo%20you%20have%20a%20website%20now%3F%0D%0AYour%20name%3A%0D%0ABest%20way%20to%20reach%20you%3A%0D%0AHow%20did%20you%20hear%20about%20us%3F%0D%0A">Get started</a>
+    </div>
+  </div>
+  <p class="fine">The free cleanup covers your last 12 months of unanswered reviews, up to 25. If you have a bigger backlog, we’ll quote a one-time catch-up (from $149) before doing anything. After the founding spots are gone, Review care is $150/month plus a $250 setup.</p>
+</div></section>
+
+<section class="tint" id="start"><div class="wrap">
+  <h2>Ready to start? Here’s what happens.</h2>
+  <p>Pick a plan above and hit <b>Get started</b>, or just email us. Either way:</p>
+  <div class="next">
+    <div><b>We write back within a day</b><span>With a few quick questions and a short, plain-English agreement you can sign on your phone.</span></div>
+    <div><b>We do the setup together</b><span>About 15 minutes, in person or over the phone. We send a simple guide so nothing is confusing.</span></div>
+    <div><b>Work starts that week</b><span>You pay by card or bank through a secure link. First replies go up within days.</span></div>
   </div>
 </div></section>
 
-<section><div class="wrap faq">
+<section><div class="wrap" style="max-width:820px">
   <h2>Questions owners ask</h2>
-  <details><summary>Do you need my passwords?</summary><p>No. You add us as a manager on your Google Business Profile and a user on Yelp for Business. Both take about two minutes, and you can remove us anytime.</p></details>
-  <details><summary>Will the replies sound like me?</summary><p>That’s the whole point. We match how you talk to customers, and you can see and change anything before it goes up for the first few weeks.</p></details>
-  <details><summary>What about bad reviews?</summary><p>We answer them calmly, never argue, and invite the customer to reach you directly. We’ll also flag anything that keeps coming up so you can fix it at the source.</p></details>
-  <details><summary>Do you write fake reviews?</summary><p>Never. Fake reviews are against the law and against Google’s and Yelp’s rules. We only reply to real ones and help you ask happy customers to leave theirs.</p></details>
-  <details><summary>Is there a contract?</summary><p>No. It’s month to month. Stop whenever you like.</p></details>
+  <details><summary>Do you need my passwords?</summary><p>No. You add us as a manager on your Google Business Profile and a user on Yelp for Business. Both take a couple of minutes, and you can remove us anytime.</p></details>
+  <details><summary>Will the replies sound like me?</summary><p>That’s the whole point. You answer a few quick questions about how you talk to customers, and for the first two weeks you see every reply before it goes up.</p></details>
+  <details><summary>What about bad reviews?</summary><p>We answer calmly, never argue, and invite the customer to reach you directly. Anything about safety, health, legal issues, or a named employee comes to you first.</p></details>
+  <details><summary>Do you write fake reviews?</summary><p>Never. Fake reviews are against federal law and against Google’s and Yelp’s rules. We only reply to real ones and help you ask every customer for theirs.</p></details>
+  <details><summary>Do you handle social media?</summary><p>We stick to reviews, Google, and Yelp, since that’s where people decide whether to visit. We don’t run Instagram or Facebook posting. Answering Facebook recommendations is available if you ask.</p></details>
+  <details><summary>Is there a contract?</summary><p>Month to month. Stop whenever you like, and everything we made for you stays yours.</p></details>
 </div></section>
 
-<section id="contact"><div class="wrap">
-  <div class="cta">
-    <h2>Want to see your free sample?</h2>
-    <p>Send us your business name. We’ll write replies to your five most recent reviews and send them over, usually within a day.</p>
-    <a class="btn amber" href="mailto:porchlightreviewsri@gmail.com?subject=Free%20sample%20for%20my%20business">Email porchlightreviewsri@gmail.com</a>
+<section class="closing"><div class="wrap">
+  <h2>Want to see your free sample?</h2>
+  <p>Send us your business name and town. We’ll write replies to your five most recent reviews and send them over, usually within a day.</p>
+  <div class="actions">
+    <a class="btn bulb" href="mailto:porchlightreviewsri@gmail.com?subject=Free%20sample%20for%20my%20business&body=Business%20name%3A%0D%0ATown%3A%0D%0ABest%20way%20to%20reach%20you%3A%0D%0AHow%20did%20you%20hear%20about%20us%3F%0D%0A">Get 5 free replies</a>
+    <a class="btn light" href="mailto:porchlightreviewsri@gmail.com">Email porchlightreviewsri@gmail.com</a>
   </div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <span>© 2026 Porchlight Reviews · Serving Rhode Island and southeastern Massachusetts</span>
+  <span>© 2026 Porchlight Reviews. Serving Rhode Island and southeastern Massachusetts.</span>
   <a href="mailto:porchlightreviewsri@gmail.com">porchlightreviewsri@gmail.com</a>
 </div></footer>
 
